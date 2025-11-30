@@ -11,6 +11,7 @@ interface Review {
   date: string;
   rating: number;
   text: string;
+  avatar?: string;
 }
 
 interface ReviewsSectionProps {
@@ -60,7 +61,8 @@ export default function ReviewsSection({ teacherId }: ReviewsSectionProps) {
           name: 'Быков Егор',
           date: '25 ноября 2024',
           rating: 5,
-          text: 'Елена Викторовна — замечательный куратор и преподаватель! Всегда поддержит, поможет разобраться в сложных темах по физике.'
+          text: 'Елена Викторовна — замечательный куратор и преподаватель! Всегда поддержит, поможет разобраться в сложных темах по физике.',
+          avatar: 'https://cdn.poehali.dev/files/67e7a73c-e261-4bba-aab2-132c03a97e30.jpg'
         },
         {
           id: 2,
@@ -184,14 +186,25 @@ export default function ReviewsSection({ teacherId }: ReviewsSectionProps) {
         {reviews.map((review) => (
           <Card key={review.id}>
             <CardContent className="pt-6">
-              <div className="flex items-start justify-between mb-3">
-                <div>
-                  <p className="font-semibold text-foreground">{review.name}</p>
-                  <p className="text-sm text-muted-foreground">{review.date}</p>
+              <div className="flex items-start gap-4">
+                {review.avatar && (
+                  <img 
+                    src={review.avatar} 
+                    alt={review.name}
+                    className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+                  />
+                )}
+                <div className="flex-1">
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <p className="font-semibold text-foreground">{review.name}</p>
+                      <p className="text-sm text-muted-foreground">{review.date}</p>
+                    </div>
+                    {renderStars(review.rating)}
+                  </div>
+                  <p className="text-foreground">{review.text}</p>
                 </div>
-                {renderStars(review.rating)}
               </div>
-              <p className="text-foreground">{review.text}</p>
             </CardContent>
           </Card>
         ))}
