@@ -36,7 +36,23 @@ const teachers: Teacher[] = [
       'Опыт преподавания в техническом вузе'
     ]
   },
-
+  {
+    id: 2,
+    name: 'Ковалева Софья Александровна',
+    position: 'Преподаватель биологии',
+    department: 'Преподаватели группы Д25',
+    image: 'https://cdn.poehali.dev/files/338e7a58-8b59-48b1-a163-4a355e9c1d9e.png',
+    experience: 4,
+    degree: 'Преподаватель',
+    specialization: ['Биология', 'Общая биология', 'Ботаника'],
+    email: 'kovaleva.sa@nvnpimephi.ru',
+    achievements: [
+      'Преподаватель НВПИ НИЯУ МИФИ',
+      'Специализация: биология',
+      'Современные методы преподавания',
+      'Подготовка студентов к олимпиадам'
+    ]
+  }
 ];
 
 const departments = [
