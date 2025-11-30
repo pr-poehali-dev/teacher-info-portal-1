@@ -18,22 +18,46 @@ interface ReviewsSectionProps {
 }
 
 export default function ReviewsSection({ teacherId }: ReviewsSectionProps) {
-  const [reviews, setReviews] = useState<Review[]>([
-    {
-      id: 1,
-      name: 'Иван Петров',
-      date: '15 ноября 2024',
-      rating: 5,
-      text: 'Отличный преподаватель! Объясняет сложные темы простым языком. Всегда готова помочь и ответить на вопросы.'
-    },
-    {
-      id: 2,
-      name: 'Мария Сидорова',
-      date: '10 ноября 2024',
-      rating: 5,
-      text: 'Очень внимательный и терпеливый педагог. Благодаря Дарье Дмитриевне я начала понимать высшую математику!'
+  const getInitialReviews = () => {
+    if (teacherId === 1) {
+      return [
+        {
+          id: 1,
+          name: 'Иван Петров',
+          date: '15 ноября 2024',
+          rating: 5,
+          text: 'Отличный преподаватель! Объясняет сложные темы простым языком. Всегда готова помочь и ответить на вопросы.'
+        },
+        {
+          id: 2,
+          name: 'Мария Сидорова',
+          date: '10 ноября 2024',
+          rating: 5,
+          text: 'Очень внимательный и терпеливый педагог. Благодаря Дарье Дмитриевне я начала понимать высшую математику!'
+        }
+      ];
+    } else if (teacherId === 2) {
+      return [
+        {
+          id: 1,
+          name: 'Алексей Морозов',
+          date: '20 ноября 2024',
+          rating: 5,
+          text: 'Софья Александровна делает биологию интересной! Каждая лекция — это увлекательное путешествие в мир живой природы.'
+        },
+        {
+          id: 2,
+          name: 'Екатерина Волкова',
+          date: '18 ноября 2024',
+          rating: 5,
+          text: 'Прекрасный преподаватель! Использует современные методы обучения, всегда приводит актуальные примеры из жизни.'
+        }
+      ];
     }
-  ]);
+    return [];
+  };
+
+  const [reviews, setReviews] = useState<Review[]>(getInitialReviews());
 
   const [showForm, setShowForm] = useState(false);
   const [newReview, setNewReview] = useState({
