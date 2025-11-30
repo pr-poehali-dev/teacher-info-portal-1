@@ -36,114 +36,24 @@ const teachers: Teacher[] = [
       'Член-корреспондент Российской академии наук'
     ]
   },
-  {
-    id: 2,
-    name: 'Смирнова Елена Викторовна',
-    position: 'Доцент, кандидат наук',
-    department: 'Кафедра прикладной информатики',
-    image: 'https://cdn.poehali.dev/projects/3f5b9162-0a15-463e-981c-8ed14fbe5fb7/files/25f22988-fad7-4fa5-8140-129a1ce37274.jpg',
-    experience: 15,
-    degree: 'Кандидат технических наук',
-    specialization: ['Алгоритмы и структуры данных', 'Машинное обучение', 'Искусственный интеллект'],
-    email: 'smirnova.ev@university.edu',
-    achievements: [
-      'Разработка инновационных методов обучения',
-      'Руководитель лаборатории машинного обучения',
-      'Победитель конкурса "Лучший преподаватель года"',
-      'Автор 5 учебных пособий'
-    ]
-  },
-  {
-    id: 3,
-    name: 'Петров Михаил Александрович',
-    position: 'Профессор, доктор наук',
-    department: 'Кафедра физики',
-    image: 'https://cdn.poehali.dev/projects/3f5b9162-0a15-463e-981c-8ed14fbe5fb7/files/445dfe22-e382-4619-8e8a-3e5912a15983.jpg',
-    experience: 30,
-    degree: 'Доктор физико-математических наук',
-    specialization: ['Квантовая физика', 'Термодинамика', 'Статистическая физика'],
-    email: 'petrov.ma@university.edu',
-    achievements: [
-      'Стаж научной работы более 35 лет',
-      'Руководитель крупных исследовательских проектов',
-      'Международное признание в области квантовой физики',
-      'Лектор международных конференций'
-    ]
-  },
-  {
-    id: 4,
-    name: 'Козлова Анна Николаевна',
-    position: 'Доцент, кандидат наук',
-    department: 'Кафедра экономики',
-    image: 'https://cdn.poehali.dev/projects/3f5b9162-0a15-463e-981c-8ed14fbe5fb7/files/25f22988-fad7-4fa5-8140-129a1ce37274.jpg',
-    experience: 12,
-    degree: 'Кандидат экономических наук',
-    specialization: ['Макроэкономика', 'Финансовый анализ', 'Экономическая теория'],
-    email: 'kozlova.an@university.edu',
-    achievements: [
-      'Консультант крупных финансовых компаний',
-      'Эксперт в области финансового анализа',
-      'Автор более 40 научных статей',
-      'Разработка учебных программ'
-    ]
-  },
-  {
-    id: 5,
-    name: 'Волков Дмитрий Игоревич',
-    position: 'Профессор, доктор наук',
-    department: 'Кафедра химии',
-    image: 'https://cdn.poehali.dev/projects/3f5b9162-0a15-463e-981c-8ed14fbe5fb7/files/d02d80ac-217c-4609-8bfc-d3245046e563.jpg',
-    experience: 22,
-    degree: 'Доктор химических наук',
-    specialization: ['Органическая химия', 'Биохимия', 'Химический синтез'],
-    email: 'volkov.di@university.edu',
-    achievements: [
-      'Открытия в области органического синтеза',
-      'Руководитель химической лаборатории',
-      'Патенты на изобретения',
-      'Международные публикации в топовых журналах'
-    ]
-  },
-  {
-    id: 6,
-    name: 'Морозова Ольга Сергеевна',
-    position: 'Доцент, кандидат наук',
-    department: 'Кафедра иностранных языков',
-    image: 'https://cdn.poehali.dev/projects/3f5b9162-0a15-463e-981c-8ed14fbe5fb7/files/25f22988-fad7-4fa5-8140-129a1ce37274.jpg',
-    experience: 18,
-    degree: 'Кандидат филологических наук',
-    specialization: ['Английская литература', 'Деловой английский', 'Лингвистика'],
-    email: 'morozova.os@university.edu',
-    achievements: [
-      'Преподаватель международного уровня',
-      'Сертификат CELTA',
-      'Организатор языковых стажировок',
-      'Автор методических пособий'
-    ]
-  }
+
 ];
 
 const departments = [
-  'Все кафедры',
-  'Кафедра высшей математики',
-  'Кафедра прикладной информатики',
-  'Кафедра физики',
-  'Кафедра экономики',
-  'Кафедра химии',
-  'Кафедра иностранных языков'
+  'Кафедра высшей математики'
 ];
 
 export default function Index() {
   const [selectedTeacher, setSelectedTeacher] = useState<Teacher | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedDepartment, setSelectedDepartment] = useState('Все кафедры');
+  const [selectedDepartment, setSelectedDepartment] = useState('Кафедра высшей математики');
 
   const filteredTeachers = teachers.filter(teacher => {
     const matchesSearch = teacher.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          teacher.department.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          teacher.specialization.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));
     
-    const matchesDepartment = selectedDepartment === 'Все кафедры' || teacher.department === selectedDepartment;
+    const matchesDepartment = teacher.department === selectedDepartment;
     
     return matchesSearch && matchesDepartment;
   });
