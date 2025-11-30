@@ -35,6 +35,13 @@ export default function ReviewsSection({ teacherId }: ReviewsSectionProps) {
           date: '10 ноября 2024',
           rating: 5,
           text: 'Очень внимательный и терпеливый педагог. Благодаря Дарье Дмитриевне я начала понимать высшую математику!'
+        },
+        {
+          id: 3,
+          name: 'Абалмасов Андрей',
+          date: '30 ноября 2024',
+          rating: 1,
+          text: 'Я сегодня не прийду'
         }
       ];
     } else if (teacherId === 2) {
@@ -52,6 +59,13 @@ export default function ReviewsSection({ teacherId }: ReviewsSectionProps) {
           date: '18 ноября 2024',
           rating: 5,
           text: 'Прекрасный преподаватель! Использует современные методы обучения, всегда приводит актуальные примеры из жизни.'
+        },
+        {
+          id: 3,
+          name: 'Абалмасов Андрей',
+          date: '30 ноября 2024',
+          rating: 1,
+          text: 'Я сегодня не прийду'
         }
       ];
     } else if (teacherId === 3) {
@@ -70,6 +84,13 @@ export default function ReviewsSection({ teacherId }: ReviewsSectionProps) {
           date: '22 ноября 2024',
           rating: 5,
           text: 'Лучший куратор! Елена Викторовна не только отлично преподает физику, но и всегда готова помочь с любыми вопросами группы.'
+        },
+        {
+          id: 3,
+          name: 'Абалмасов Андрей',
+          date: '30 ноября 2024',
+          rating: 1,
+          text: 'Я сегодня не прийду'
         }
       ];
     }
