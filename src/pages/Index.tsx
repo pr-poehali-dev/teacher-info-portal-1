@@ -78,7 +78,7 @@ export default function Index() {
     <div className="min-h-screen bg-background">
       <header className="bg-primary text-primary-foreground py-16 px-6">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Преподавательский состав</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Препод.info</h1>
           <p className="text-lg opacity-90 max-w-2xl">
             Наши преподаватели — высококвалифицированные специалисты с богатым опытом в науке и образовании
           </p>
