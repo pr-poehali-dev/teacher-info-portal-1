@@ -94,9 +94,13 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       <header className="bg-primary text-primary-foreground py-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Препод.info</h1>
-          <p className="text-lg opacity-90 max-w-2xl">
+        <div className="max-w-7xl mx-auto flex flex-col items-center">
+          <img 
+            src="https://cdn.poehali.dev/files/825af2aa-e091-4b52-a0fc-402414f8706c.jpg" 
+            alt="Препод.info"
+            className="h-16 md:h-20 mb-4"
+          />
+          <p className="text-lg opacity-90 max-w-2xl text-center">
             Наши преподаватели — высококвалифицированные специалисты с богатым опытом в науке и образовании
           </p>
         </div>
