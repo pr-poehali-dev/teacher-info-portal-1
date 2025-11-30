@@ -23,7 +23,7 @@ const teachers: Teacher[] = [
     id: 1,
     name: 'Люлина Дарья Дмитриевна',
     position: 'Преподаватель математики',
-    department: 'Кафедра высшей математики',
+    department: 'Преподаватели группы Д25',
     image: 'https://cdn.poehali.dev/files/3251dba0-285d-4785-bb8b-a78dddd18bc2.jpg',
     experience: 5,
     degree: 'Преподаватель',
@@ -40,13 +40,13 @@ const teachers: Teacher[] = [
 ];
 
 const departments = [
-  'Кафедра высшей математики'
+  'Преподаватели группы Д25'
 ];
 
 export default function Index() {
   const [selectedTeacher, setSelectedTeacher] = useState<Teacher | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedDepartment, setSelectedDepartment] = useState('Кафедра высшей математики');
+  const [selectedDepartment, setSelectedDepartment] = useState('Преподаватели группы Д25');
 
   const filteredTeachers = teachers.filter(teacher => {
     const matchesSearch = teacher.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
