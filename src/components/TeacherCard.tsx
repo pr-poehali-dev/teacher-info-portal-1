@@ -23,7 +23,7 @@ interface TeacherCardProps {
 export default function TeacherCard({ teacher, onClick }: TeacherCardProps) {
   return (
     <Card 
-      className="overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer border-border bg-card hover:scale-[1.02]"
+      className="overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer border-0 bg-white hover:scale-[1.05] shadow-md"
       onClick={onClick}
     >
       <div className="aspect-[4/3] overflow-hidden bg-muted">
