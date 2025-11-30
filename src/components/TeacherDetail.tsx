@@ -2,6 +2,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import Icon from '@/components/ui/icon';
+import ReviewsSection from './ReviewsSection';
 
 interface Teacher {
   id: number;
@@ -101,6 +102,10 @@ export default function TeacherDetail({ teacher, open, onClose }: TeacherDetailP
                 ))}
               </ul>
             </div>
+
+            <Separator />
+
+            <ReviewsSection teacherId={teacher.id} />
           </div>
         </div>
       </DialogContent>
