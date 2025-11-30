@@ -93,6 +93,23 @@ export default function ReviewsSection({ teacherId }: ReviewsSectionProps) {
           text: 'Я сегодня не прийду'
         }
       ];
+    } else if (teacherId === 4) {
+      return [
+        {
+          id: 1,
+          name: 'Студент группы Д25',
+          date: '28 ноября 2024',
+          rating: 5,
+          text: 'Она строгая только к тем кто ничего не делает и нарушает дисциплину'
+        },
+        {
+          id: 2,
+          name: 'Абалмасов Андрей',
+          date: '30 ноября 2024',
+          rating: 1,
+          text: 'Я сегодня не прийду'
+        }
+      ];
     }
     return [];
   };
